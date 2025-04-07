@@ -1,0 +1,109 @@
+.leaderboard {
+  --bg: light-dark(#e5e5e5, #2f2f2f);
+  padding: 50px 20px 20px;
+  gap: 30px;
+  width: 85%;
+  max-width: 400px;
+  height: 85%;
+  max-height: fit-content;
+
+  & > i.close {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity var(--transition-duration-global);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  & .course-name {
+    font-family: Arial;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  & .title {
+    color: var(--color-primary);
+  }
+
+  & > .message {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--bg);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: start;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-weight: bold;
+
+    & > i {
+      font-size: 3rem;
+    }
+
+    & .percentage {
+      color: var(--color-primary);
+    }
+
+    @media (max-width: 300px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  & > .leader-board {
+    background-color: var(--bg);
+    padding: 15px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & > * {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: light-dark(#eee, #191919);
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-align: start;
+      user-select: none;
+      transition: background-color var(--transition-duration-global);
+
+      &:hover {
+        background-color: var(--color-primary20);
+      }
+
+      & > img {
+        max-width: 50px;
+      }
+
+      & > .info {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        & > .name {
+          font-weight: bolder;
+        }
+
+        & > .percentage {
+          color: var(--color-primary);
+        }
+      }
+
+      @media (max-width: 300px) {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}

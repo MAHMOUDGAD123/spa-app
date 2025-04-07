@@ -1,0 +1,47 @@
+.ask-question {
+  width: 85%;
+  max-width: 500px;
+  height: fit-content;
+  max-height: fit-content;
+
+  & > i {
+    font-size: 5.5rem;
+    color: var(--color-primary);
+  }
+
+  & > h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: bolder;
+  }
+
+  & > form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & input {
+      background-color: light-dark(#e0e0e0, #333);
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+      font-size: 0.95rem;
+
+      &:is(:focus, :focus-visible) {
+        outline: var(--color-primary) 2px solid;
+      }
+    }
+
+    & > .buttons {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      & > * {
+        flex: 1 1 150px;
+      }
+    }
+  }
+}

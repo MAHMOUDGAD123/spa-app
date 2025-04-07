@@ -1,0 +1,115 @@
+.pdf-viewer {
+  width: 95%;
+  height: 95%;
+  max-width: 550px;
+  max-height: 700px;
+  padding: 10px;
+  user-select: none;
+
+  & .hidden-link {
+    display: none;
+  }
+
+  & i {
+    pointer-events: none;
+  }
+
+  & > .controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    border-radius: 100px;
+
+    & > * {
+      border-radius: 100px;
+      text-align: center;
+      align-content: center;
+      position: relative;
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity var(--transition-duration-global);
+      border: 3px solid var(--color-primary95);
+      text-align: center;
+      align-content: center;
+      width: 40px;
+      aspect-ratio: 1;
+
+      &::after {
+        content: attr(data-title);
+        opacity: 0;
+        visibility: hidden;
+        font-size: 0.8rem;
+        font-family: robotomono;
+        position: absolute;
+        top: 130%;
+        left: 50%;
+        translate: -50% 0;
+        transition: opacity var(--transition-duration-global);
+        white-space: nowrap;
+        letter-spacing: 1px;
+      }
+
+      &:is(:hover, :focus-visible) {
+        opacity: 1;
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  & > .pdf-pages {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: 100%;
+    gap: 5px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    content-visibility: auto;
+
+    @media (max-height: 500px) {
+      grid-auto-rows: auto;
+      scroll-snap-type: none;
+    }
+
+    & > * {
+      border-radius: inherit;
+      background-color: light-dark(#d3d3d3, #111);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      font-weight: bolder;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      text-align: center;
+      font-size: clamp(1rem, 5vw, 1.25rem);
+
+      & > img {
+        width: 90px;
+      }
+
+      & > h1 {
+        color: var(--color-primary);
+        margin-bottom: 30px;
+      }
+
+      & > p {
+        font-size: 0.95rem;
+        max-width: 350px;
+      }
+    }
+  }
+}

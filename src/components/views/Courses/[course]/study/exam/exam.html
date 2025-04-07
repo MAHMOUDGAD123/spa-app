@@ -1,0 +1,205 @@
+<div class="exam">
+  <div class="nums">
+    <input type="radio" name="quiz" data-quiz="Q1" data-num="1" checked />
+    <input type="radio" name="quiz" data-quiz="Q2" data-num="2" />
+    <input type="radio" name="quiz" data-quiz="Q3" data-num="3" />
+    <input type="radio" name="quiz" data-quiz="Q4" data-num="4" />
+    <input type="radio" name="quiz" data-quiz="Q5" data-num="5" />
+  </div>
+
+  <div class="quizes">
+    <div class="quiz" data-quiz="Q1">
+      <p>Which HTML tag is used to define a table row?</p>
+
+      <div class="choices">
+        <div class="choice">
+          <div></div>
+          <p>tr</p>
+          <input type="radio" name="answer1" data-choice="C1" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>td</p>
+          <input type="radio" name="answer1" data-choice="C2" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>th</p>
+          <input type="radio" name="answer1" data-choice="C3" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>row</p>
+          <input type="radio" name="answer1" data-choice="C4" />
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz" data-quiz="Q2">
+      <p>Which property controls the text size?</p>
+
+      <div class="choices">
+        <div class="choice">
+          <div></div>
+          <p>color</p>
+          <input type="radio" name="answer2" data-choice="C1" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>margin</p>
+          <input type="radio" name="answer2" data-choice="C2" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>font-size</p>
+          <input type="radio" name="answer2" data-choice="C3" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>padding</p>
+          <input type="radio" name="answer2" data-choice="C4" />
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz" data-quiz="Q3">
+      <p>Which keyword is used to declare a constant?</p>
+
+      <div class="choices">
+        <div class="choice">
+          <div></div>
+          <p>let</p>
+          <input type="radio" name="answer3" data-choice="C1" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>const</p>
+          <input type="radio" name="answer3" data-choice="C2" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>var</p>
+          <input type="radio" name="answer3" data-choice="C3" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>static</p>
+          <input type="radio" name="answer3" data-choice="C4" />
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz" data-quiz="Q4">
+      <p>Which keyword is used for defining a type?</p>
+
+      <div class="choices">
+        <div class="choice">
+          <div></div>
+          <p>type</p>
+          <input type="radio" name="answer4" data-choice="C1" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>interface</p>
+          <input type="radio" name="answer4" data-choice="C2" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>class</p>
+          <input type="radio" name="answer4" data-choice="C3" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>define</p>
+          <input type="radio" name="answer4" data-choice="C4" />
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz" data-quiz="Q5">
+      <p>Which hook is used to manage state in a functional component?</p>
+
+      <div class="choices">
+        <div class="choice">
+          <div></div>
+          <p>useRef</p>
+          <input type="radio" name="answer5" data-choice="C1" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>useState</p>
+          <input type="radio" name="answer5" data-choice="C2" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>useEffect</p>
+          <input type="radio" name="answer5" data-choice="C3" />
+        </div>
+
+        <div class="choice">
+          <div></div>
+          <p>useMemo</p>
+          <input type="radio" name="answer5" data-choice="C4" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="__popupClose__" class="button">Close</button>
+    <button id="submitQuiz" class="button empty">Submit</button>
+  </div>
+
+  <div class="quiz-submit">
+    <h2>RESULTS</h2>
+
+    <h3 id="correctCount"></h3>
+
+    <div class="results">
+      <div data-quiz="Q1">
+        <span>Quiz 1</span>
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div data-quiz="Q2">
+        <span>Quiz 2</span>
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div data-quiz="Q3">
+        <span>Quiz 3</span>
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div data-quiz="Q4">
+        <span>Quiz 4</span>
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div data-quiz="Q5">
+        <span>Quiz 5</span>
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+
+    <button id="retakeTest" class="button">
+      <i class="fa-solid fa-rotate"></i>
+      <span>Retake</span>
+    </button>
+  </div>
+</div>

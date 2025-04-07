@@ -1,0 +1,425 @@
+<div class="study-page">
+  <div class="course-route">
+    <a-link to="/">Home</a-link>
+    <i class="fa-solid fa-chevron-right"></i>
+    <a-link to="/courses">Courses</a-link>
+    <i class="fa-solid fa-chevron-right"></i>
+    <span id="courseRouteName">Course Name</span>
+  </div>
+
+  <div class="course-title"></div>
+
+  <div class="content">
+    <div id="video">
+      <div class="full-width-btn" title="full-width-toggle">
+        <input type="checkbox" name="fullWidthToggle" id="fullWidthToggle" />
+        <div class="arrows">
+          <i class="fa-solid fa-arrow-left"></i>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <video controls poster="it-legend.webp" loop>
+        <source src="it-legend.webm" type="video/webm" />
+        <source src="it-legend.mp4" type="video/mp4" />
+        <a href="it-legend.webm">WEBM</a>
+        <a href="it-legend.mp4">MP4</a>
+      </video>
+
+      <img src="it-legend.webp" alt="photo" />
+
+      <i class="fa-solid fa-circle-play play"></i>
+    </div>
+
+    <div class="sections-icons" id="sectionsIcons">
+      <i
+        class="fa-solid fa-receipt"
+        data-clickDelegation
+        data-title="CURRICULUM"
+        data-action="intoView"
+        data-targetid="curriculumSection"
+      ></i>
+
+      <i
+        class="fa-solid fa-comments"
+        data-clickDelegation
+        data-title="COMMENTS"
+        data-action="intoView"
+        data-targetid="commentsSection"
+      ></i>
+
+      <a-link to="/ask" relative>
+        <div data-title="ASK">
+          <i class="fa-solid fa-circle-question"></i>
+        </div>
+      </a-link>
+
+      <a-link to="/leaderboard" relative>
+        <div data-title="LEADERBOARD">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+      </a-link>
+    </div>
+
+    <div class="materials">
+      <h2>Course Materials</h2>
+
+      <div class="card">
+        <div>
+          <div>
+            <i class="fa-solid fa-person-chalkboard"></i>
+            <h4>Instructor:</h4>
+            <span>Ali Shahin</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-clock"></i>
+            <h4>Duration:</h4>
+            <span>6 Weeks</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-lines-leaning"></i>
+            <h4>Lessons:</h4>
+            <span>15</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h4>Enrolled:</h4>
+            <span>71 Students</span>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <i class="fa-solid fa-globe"></i>
+            <h4>Language:</h4>
+            <span>English</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-layer-group"></i>
+            <h4>Level:</h4>
+            <span>Beginner</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-calendar-days"></i>
+            <h4>Last Update:</h4>
+            <span>2024</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-calendar-days"></i>
+            <h4>Speciality:</h4>
+            <span>Front-End</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comments" id="commentsSection">
+      <h2>Comments</h2>
+
+      <div class="comments-list" id="commentsList">
+        <div class="comment">
+          <img src="male.svg" alt="male" />
+
+          <div class="comment-details">
+            <h5 class="user-name">Mohammed Ali</h5>
+            <span class="date">Sun Sep 10 2024</span>
+            <p class="comment-body">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, id
+              sed. Maiores repudiandae quis dolor, totam modi beatae molestiae
+              deserunt.
+            </p>
+          </div>
+        </div>
+
+        <div class="comment">
+          <img src="male.svg" alt="male" />
+
+          <div class="comment-details">
+            <h5 class="user-name">Ahmed Emad</h5>
+            <span class="date">Fri Oct 12 2024</span>
+            <p class="comment-body">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, id
+              sed. Maiores repudiandae quis dolor, totam modi beatae molestiae
+              deserunt.
+            </p>
+          </div>
+        </div>
+
+        <div class="comment">
+          <img src="female.svg" alt="female" />
+
+          <div class="comment-details">
+            <h5 class="user-name">Dena Alaa</h5>
+            <span class="date">Sat Nov 15 2024</span>
+            <p class="comment-body">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, id
+              sed. Maiores repudiandae quis dolor, totam modi beatae molestiae
+              deserunt.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <form id="commetForm">
+        <textarea
+          class="card"
+          name="commentIn"
+          id="commentIn"
+          placeholder="Write a comment"
+          required
+        ></textarea>
+
+        <button class="button">Submit</button>
+      </form>
+    </div>
+
+    <div class="course-curriculum" id="curriculumSection">
+      <h2>Topics For This Course</h2>
+
+      <div class="details">
+        <div class="progress-cont">
+          <div class="progress" id="studyProgress">
+            <span>You</span>
+            <span id="progressPercentage">0%</span>
+          </div>
+        </div>
+
+        <div class="curriculum">
+          <div class="drop-down-menu">
+            <div class="week-title">
+              <h3>Week 1-2</h3>
+              <p>HyperText Markup Language Basics</p>
+            </div>
+
+            <div class="menu-toggle" title="HyperText Markup Language Basics">
+              <h4 class="title">HyperText Markup Language Basics</h4>
+              <input type="checkbox" name="drop-menu-toggle" />
+              <i class="fa-solid fa-plus plus"></i>
+              <i class="fa-solid fa-minus minus"></i>
+            </div>
+
+            <div class="menu">
+              <div class="menu-item" title="Introduction">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">Introduction</span>
+                </div>
+
+                <span class="length">05:15</span>
+              </div>
+
+              <div class="menu-item" title="Course Overview">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">Course Overview</span>
+                </div>
+
+                <span class="length">07:10</span>
+              </div>
+
+              <div class="menu-item" title="HTML Basics">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">HTML Basics</span>
+                </div>
+
+                <span class="length">10:05</span>
+              </div>
+
+              <a-link
+                class="menu-item"
+                to="/pdf"
+                relative
+                title="Course Reference (PDF)"
+              >
+                <div class="info">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span class="name"
+                    >Course Reference (<span class="change-color">PDF</span
+                    >)</span
+                  >
+                </div>
+
+                <span class="length">6 Pages</span>
+              </a-link>
+
+              <a-link
+                class="menu-item"
+                to="/exam"
+                relative
+                title="Course Exercise (Exam)"
+              >
+                <div class="info">
+                  <i class="fa-solid fa-file-pen"></i>
+                  <span class="name"
+                    >Course Exercise (<span class="change-color">Exam</span
+                    >)</span
+                  >
+                </div>
+
+                <div class="length">
+                  <span>5 Questions</span>
+                </div>
+              </a-link>
+            </div>
+          </div>
+
+          <div class="drop-down-menu">
+            <div class="week-title">
+              <h3>Week 3-4</h3>
+              <p>Cascading Style Sheets Basics</p>
+            </div>
+
+            <div class="menu-toggle" title="Cascading Style Sheets Basics">
+              <h4 class="title">Cascading Style Sheets Basics</h4>
+              <input type="checkbox" name="drop-menu-toggle" />
+              <i class="fa-solid fa-plus plus"></i>
+              <i class="fa-solid fa-minus minus"></i>
+            </div>
+
+            <div class="menu">
+              <div class="menu-item" title="Introduction">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">Introduction</span>
+                </div>
+
+                <span class="length">03:15</span>
+              </div>
+
+              <div class="menu-item" title="Course Overview">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">Course Overview</span>
+                </div>
+
+                <span class="length">07:08</span>
+              </div>
+
+              <div class="menu-item" title="CSS Basics">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">CSS Basics</span>
+                </div>
+
+                <span class="length">11:48</span>
+              </div>
+
+              <a-link
+                to="/pdf"
+                relative
+                class="menu-item"
+                title="Course Reference (PDF)"
+              >
+                <div class="info">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span class="name"
+                    >Course Reference (<span class="change-color">PDF</span
+                    >)</span
+                  >
+                </div>
+
+                <span class="length">6 Pages</span>
+              </a-link>
+
+              <a-link
+                class="menu-item"
+                to="/exam"
+                relative
+                title="Course Exercise (Exam)"
+              >
+                <div class="info">
+                  <i class="fa-solid fa-file-pen"></i>
+                  <span class="name"
+                    >Course Exercise (<span class="change-color">Exam</span
+                    >)</span
+                  >
+                </div>
+
+                <div class="length">
+                  <span>5 Questions</span>
+                </div>
+              </a-link>
+            </div>
+          </div>
+
+          <div class="drop-down-menu">
+            <div class="week-title">
+              <h3>Week 5-6</h3>
+              <p>JavaScript Basics</p>
+            </div>
+
+            <div class="menu-toggle" title="JavaScript Basics">
+              <h4 class="title">JavaScript Basics</h4>
+              <input type="checkbox" name="drop-menu-toggle" />
+              <i class="fa-solid fa-plus plus"></i>
+              <i class="fa-solid fa-minus minus"></i>
+            </div>
+
+            <div class="menu">
+              <div class="menu-item" title="Introduction">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">Introduction</span>
+                </div>
+
+                <span class="length">04:05</span>
+              </div>
+
+              <div class="menu-item" title="Course Overview">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">Course Overview</span>
+                </div>
+                <span class="length">09:55</span>
+              </div>
+
+              <div class="menu-item" title="JavaScript Basics">
+                <div class="info">
+                  <i class="fa-solid fa-file-video"></i>
+                  <span class="name">JavaScript Basics</span>
+                </div>
+                <span class="length">15:57</span>
+              </div>
+
+              <a-link
+                to="/pdf"
+                relative
+                class="menu-item"
+                title="Course Reference (PDF)"
+              >
+                <div class="info">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span class="name"
+                    >Course Reference (<span class="change-color">PDF</span
+                    >)</span
+                  >
+                </div>
+                <span class="length">6 Pages</span>
+              </a-link>
+
+              <a-link
+                class="menu-item"
+                to="/exam"
+                relative
+                title="Course Exercise (Exam)"
+              >
+                <div class="info">
+                  <i class="fa-solid fa-file-pen"></i>
+                  <span class="name"
+                    >Course Exercise (<span class="change-color">Exam</span
+                    >)</span
+                  >
+                </div>
+
+                <div class="length">
+                  <span>5 Questions</span>
+                </div>
+              </a-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

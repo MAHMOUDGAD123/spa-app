@@ -1,0 +1,49 @@
+.about-page {
+  position: relative;
+
+  & > #pages {
+    border-radius: 10px;
+    min-height: 350px;
+    height: calc(var(--height-main) - 25px);
+    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: 100%;
+    gap: 3px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    content-visibility: auto;
+
+    & > * {
+      background-color: light-dark(#ddd, #111);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      font-weight: bolder;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      text-align: center;
+      font-size: clamp(1rem, 5vw, 1.25rem);
+    }
+  }
+
+  & > #btt {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0.5;
+    color: var(--color-primary);
+    visibility: hidden;
+    transition-property: opacity;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

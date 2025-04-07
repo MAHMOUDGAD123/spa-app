@@ -1,0 +1,478 @@
+/* Fonts Start */
+@font-face {
+  font-family: robotomono;
+  src: url("/RobotoMono.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: saira;
+  src: url("/SairaStencilOne.woff2") format("woff2");
+  font-display: swap;
+}
+/* Fonts End */
+
+:root {
+  /* padding */
+  --padding-container: 30px;
+  /* heights */
+  --height-header: 70px;
+  --height-main: calc(100dvh - var(--height-header));
+  --min-height-main: calc(100dvh - var(--height-header));
+  --max-height-main: calc(100dvh - var(--height-header));
+  --max-width-body: 1280px;
+  --min-width-body: 250px;
+  /* colors */
+  --color-primary: #e54860;
+  --color-primary95: #e5486095;
+  --color-primary80: #e5486080;
+  --color-primary50: #e5486050;
+  --color-primary30: #e5486030;
+  --color-primary20: #e5486020;
+  --color-secondary: #242958;
+  --color-button: #008cff;
+  --color-active-button: #29338d;
+  --color-text-title: var(--color-secondary);
+  --color-text: light-dark(#707070, #c0c0c0);
+  --color-header: light-dark(#e5e5e5, #1c1c1c);
+  --color-footer: light-dark(#e5e5e5, #2d2d2d);
+  --color-background-root: light-dark(#faf9f9, #222222);
+  --color-text-root: light-dark(#213547, #ffffff);
+  /* transition-duration */
+  --transition-duration-global: 300ms;
+
+  color-scheme: light dark;
+  color: var(--color-text-root);
+  background-color: var(--color-background-root);
+
+  interpolate-size: allow-keywords;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  font-family: robotomono, monospace, sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* theme */
+  &:has(.dark:checked) {
+    color-scheme: dark;
+  }
+  &:has(.system:checked) {
+    color-scheme: light dark;
+  }
+  &:has(.light:checked) {
+    color-scheme: light;
+  }
+
+  /* stop scrolling if there's any .popup element exists */
+  &:has(.popup) {
+    overflow: hidden;
+  }
+}
+
+/* Untilities Start */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* Untilities End */
+
+/* Compomnents Start */
+.container {
+  max-width: var(--max-width-body);
+  margin-inline: auto;
+  padding-inline: var(--padding-container);
+}
+
+.important {
+  color: var(--color-primary);
+  font-family: saira;
+}
+
+.button {
+  appearance: none;
+  border-radius: 5px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: inherit;
+  background-color: var(--color-primary95);
+  cursor: pointer;
+  user-select: none;
+  transition-property: color, background-color;
+  transition-duration: var(--transition-duration-global);
+
+  &.empty {
+    border: 2px solid var(--color-primary);
+    width: 100%;
+
+    &:not(:hover) {
+      background-color: #00000000;
+      color: var(--color-primary);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-active-button);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-primary);
+  }
+}
+
+.filters {
+  margin: 30px auto;
+  width: fit-content;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  & > [name="filter"] {
+    border-radius: 10px;
+    background-color: var(--prm-col-30);
+    padding: 5px 10px;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color var(--trans);
+
+    &:hover {
+      background-color: var(--prm-col-50);
+    }
+
+    &:checked {
+      background-color: var(--prm-col-95);
+    }
+
+    &::before {
+      content: attr(data-label);
+      font-size: 1rem;
+      transition: none;
+    }
+  }
+}
+
+.pagination {
+  & > * {
+    counter-increment: page;
+    position: relative;
+    contain: layout;
+
+    &::before {
+      content: counter(page);
+      font-size: 1.25rem;
+      position: absolute;
+      z-index: -1;
+      top: 3px;
+      left: 10px;
+      font-family: saira;
+      color: var(--color-primary);
+    }
+  }
+}
+
+.under-line {
+  position: relative;
+  white-space: nowrap;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 5px;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-primary);
+  }
+}
+
+[data-link] {
+  cursor: pointer;
+}
+
+[data-link][data-nav] {
+  user-select: none;
+  padding: 5px 15px;
+  border-radius: 100px;
+  font-weight: bolder;
+  transition: background-color var(--transition-duration-global);
+
+  &.active {
+    background-color: var(--color-primary30);
+
+    &.exact {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 7px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition-property: opacity, visibility;
+  visibility: hidden;
+  z-index: 10;
+  opacity: 0;
+  transition-duration: var(--transition-duration-global);
+
+  &.show-up {
+    visibility: visible;
+    opacity: 0.35;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px light-dark(#00000030, #ffffff30);
+  background-color: light-dark(#eee, #2a2a2a);
+  padding: 20px;
+}
+
+.signed {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    outline: 3px solid var(--color-primary);
+    border-radius: 5px;
+    animation: pulse 500ms infinite;
+  }
+}
+
+.change-color {
+  animation: change-color infinite 1s alternate;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #000000dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  min-width: var(--min-width-body);
+
+  & > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--color-background-root);
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+    overflow: auto;
+    scrollbar-width: none;
+    animation: settle-top 0.5s forwards, fade-in 0.5s forwards;
+  }
+}
+
+/* Compomnents End */
+
+/* Animaiton Keyframes Start */
+@keyframes change-color {
+  from {
+    color: inherit;
+  }
+  to {
+    color: var(--color-primary);
+  }
+}
+
+@keyframes jump {
+  to {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 50%;
+  }
+}
+
+@keyframes point-right {
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes outline-blink {
+  50% {
+    box-shadow: none;
+  }
+}
+
+@keyframes spin-clockwise {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes spin-anticlockwise {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes fill-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: auto;
+  }
+}
+
+@keyframes half-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes full-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes full-height {
+  from {
+    height: 0;
+  }
+  to {
+    height: fit-content;
+  }
+}
+
+@keyframes full-width-gpu {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes settle-left {
+  from {
+    transform: translateX(-25px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes settle-right {
+  from {
+    transform: translateX(25px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes settle-top {
+  from {
+    transform: translateY(-25px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes settle-bottom {
+  from {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes to-right {
+  to {
+    right: 0;
+  }
+}
+
+@keyframes translate-x {
+  to {
+    transform: translateX(var(--translateX));
+  }
+}
+
+@keyframes settle-x-gpu {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* Animaiton Keyframes End */

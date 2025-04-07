@@ -1,0 +1,359 @@
+[
+  [
+    "cs_intro",
+    {
+      "title": "Introduction To Computer Science",
+      "progress": 50,
+      "by": "Ali Shahin",
+      "price": 0,
+      "img": "cs_intro",
+      "Speciality": [
+        "frontend",
+        "c_sharp_basics",
+        "web_dev_dot_net",
+        "nodejs",
+        "flutter",
+        "dot_net_mobile",
+        "cpp"
+      ]
+    }
+  ],
+  [
+    "algo_lv1",
+    {
+      "title": "Algorithms And Problem Solving Level 1",
+      "progress": 55,
+      "by": "Ali Shahin",
+      "price": 0,
+      "img": "algo_lv1",
+      "Speciality": [
+        "frontend",
+        "c_sharp_basics",
+        "web_dev_dot_net",
+        "nodejs",
+        "flutter",
+        "dot_net_mobile",
+        "cpp"
+      ]
+    }
+  ],
+  [
+    "cpp",
+    {
+      "title": "C++",
+      "progress": 70,
+      "by": "Ali Shahin",
+      "price": 0,
+      "img": "cpp",
+      "Speciality": ["frontend", "nodejs", "cpp"]
+    }
+  ],
+  [
+    "cpp_oop",
+    {
+      "title": "C++ OOP",
+      "progress": 78,
+      "by": "Ali Shahin",
+      "price": 0,
+      "img": "cpp_oop",
+      "Speciality": ["nodejs", "flutter", "cpp"]
+    }
+  ],
+  [
+    "html",
+    {
+      "title": "HTML",
+      "progress": 65,
+      "by": "Elkhawanki",
+      "price": 288,
+      "img": "html",
+      "Speciality": ["frontend", "web_dev_dot_net", "nodejs"]
+    }
+  ],
+  [
+    "css",
+    {
+      "title": "CSS",
+      "progress": 78,
+      "by": "Elkhawanki",
+      "price": 288,
+      "img": "css",
+      "Speciality": ["frontend", "web_dev_dot_net", "nodejs"]
+    }
+  ],
+  [
+    "html_css_proj",
+    {
+      "title": "HTML And CSS Project",
+      "progress": 64,
+      "by": "Elkhawanki",
+      "price": 288,
+      "img": "html_css_proj",
+      "Speciality": ["frontend", "web_dev_dot_net", "nodejs"]
+    }
+  ],
+  [
+    "javascript",
+    {
+      "title": "JavaScript",
+      "progress": 34,
+      "by": "Ali Shahin",
+      "price": 1440,
+      "img": "javascript",
+      "Speciality": ["frontend", "web_dev_dot_net", "nodejs"]
+    }
+  ],
+  [
+    "ds_students",
+    {
+      "title": "Data Structure For Students",
+      "progress": 45,
+      "by": "Amr Boghdady",
+      "price": 864,
+      "img": "ds_students",
+      "Speciality": ["cpp"]
+    }
+  ],
+  [
+    "dsa",
+    {
+      "title": "Data Structure And Algorithms",
+      "progress": 60,
+      "by": "Ayman Mohamed",
+      "price": 1440,
+      "img": "dsa",
+      "Speciality": [
+        "c_sharp_basics",
+        "web_dev_dot_net",
+        "flutter",
+        "dot_net_mobile",
+        "cpp"
+      ]
+    }
+  ],
+  [
+    "c_sharp_basics",
+    {
+      "title": "C# Basics",
+      "progress": 85,
+      "by": "Ali Shahin",
+      "price": 576,
+      "img": "c_sharp_basics",
+      "Speciality": ["c_sharp_basics", "web_dev_dot_net", "dot_net_mobile"]
+    }
+  ],
+  [
+    "c_sharp_problem_solving",
+    {
+      "title": "C# Problem Solving",
+      "progress": 64,
+      "by": "Ali Shahin",
+      "price": 576,
+      "img": "c_sharp_problem_solving",
+      "Speciality": ["c_sharp_basics", "web_dev_dot_net", "dot_net_mobile"]
+    }
+  ],
+  [
+    "c_sharp_oop",
+    {
+      "title": "C#",
+      "progress": 70,
+      "by": "Ali Shahin",
+      "price": 0,
+      "img": "c_sharp_oop",
+      "Speciality": [
+        "frontend",
+        "c_sharp_basics",
+        "web_dev_dot_net",
+        "dot_net_mobile"
+      ]
+    }
+  ],
+  [
+    "c_sharp_advanced",
+    {
+      "title": "C# Advanced",
+      "progress": 80,
+      "by": "Ali Shahin",
+      "price": 576,
+      "img": "c_sharp_advanced",
+      "Speciality": ["c_sharp_basics", "web_dev_dot_net", "dot_net_mobile"]
+    }
+  ],
+  [
+    "advanced_sql",
+    {
+      "title": "Advanced SQL Server Database",
+      "progress": 65,
+      "by": "Ali Shahin",
+      "price": 576,
+      "img": "advanced_sql",
+      "Speciality": ["web_dev_dot_net", "data_analysis"]
+    }
+  ],
+  [
+    "web_dev_asp_dot_net_training",
+    {
+      "title": "Web Development With ASP.Net Core Training",
+      "progress": 15,
+      "by": "Ali Shahin",
+      "price": 1728,
+      "img": "web_dev_asp_dot_net_training",
+      "Speciality": ["web_dev_dot_net"]
+    }
+  ],
+  [
+    "web_dev_asp_dot_net",
+    {
+      "title": "Web Development With ASP.Net Core",
+      "progress": 79,
+      "by": "Ali Shahin",
+      "price": 1728,
+      "img": "web_dev_asp_dot_net",
+      "Speciality": ["web_dev_dot_net"]
+    }
+  ],
+  [
+    "angular",
+    {
+      "title": "Angular",
+      "progress": 84,
+      "by": "Ali Shahin",
+      "price": 2736,
+      "img": "angular",
+      "Speciality": ["web_dev_dot_net"]
+    }
+  ],
+  [
+    "nodejs",
+    {
+      "title": "NodeJS",
+      "progress": 30,
+      "by": "Hossam Magdy",
+      "price": 2880,
+      "img": "nodejs",
+      "Speciality": ["nodejs"]
+    }
+  ],
+  [
+    "dart",
+    {
+      "title": "Dart",
+      "progress": 49,
+      "by": "Youssef Abdelfatah",
+      "price": 576,
+      "img": "dart",
+      "Speciality": ["flutter"]
+    }
+  ],
+  [
+    "dart_oop",
+    {
+      "title": "Dart OOP",
+      "progress": 55,
+      "by": "Youssef Abdelfatah",
+      "price": 576,
+      "img": "dart_oop",
+      "Speciality": ["flutter"]
+    }
+  ],
+  [
+    "flutter",
+    {
+      "title": "Flutter",
+      "progress": 65,
+      "by": "Youssef Abdelfatah",
+      "price": 2304,
+      "img": "flutter",
+      "Speciality": ["flutter"]
+    }
+  ],
+  [
+    "dot_net_maui",
+    {
+      "title": ".Net Maui",
+      "progress": 54,
+      "by": "Ali Shahin",
+      "price": 3744,
+      "img": "dot_net_maui",
+      "Speciality": ["dot_net_mobile"]
+    }
+  ],
+  [
+    "dot_net_maui_proj",
+    {
+      "title": ".Net Maui Project",
+      "progress": 72,
+      "by": "Ali Shahin",
+      "price": 3744,
+      "img": "dot_net_maui",
+      "Speciality": ["dot_net_mobile"]
+    }
+  ],
+  [
+    "data_analysis",
+    {
+      "title": "Data Analysis",
+      "progress": 78,
+      "by": "Amr Boghdady",
+      "price": 1728,
+      "img": "data_analysis",
+      "Speciality": ["data_analysis"]
+    }
+  ],
+  [
+    "math",
+    {
+      "title": "Maths For Programmers",
+      "progress": 80,
+      "by": "Ayman Mohamed",
+      "price": 1440,
+      "img": "math",
+      "Speciality": ["other"]
+    }
+  ],
+  [
+    "english",
+    {
+      "title": "English For Programmers",
+      "progress": 67,
+      "by": "Fadwa Shendy",
+      "price": 1584,
+      "img": "english",
+      "Speciality": ["other"]
+    }
+  ],
+  [
+    "ccna",
+    {
+      "title": "CCNA",
+      "progress": 50,
+      "by": "Hussein Ahmed",
+      "price": 0,
+      "img": "ccna",
+      "Speciality": ["other"]
+    }
+  ],
+  [
+    "skills",
+    {
+      "title": "Programmers Skills",
+      "progress": 90,
+      "by": "Bassant",
+      "price": 1584,
+      "img": "skills",
+      "Speciality": ["other"]
+    }
+  ],
+  [
+    "color_intelligence",
+    {
+      "title": "Emotional Intelligence And Color Science",
+      "progress": 75,
+      "by": "Ali Shahin",
+      "price": 2736,
+      "img": "color_intelligence",
+      "Speciality": ["other"]
+    }
+  ]
+]
