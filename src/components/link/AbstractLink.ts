@@ -27,9 +27,8 @@ export default class AbstractLink extends HTMLElement {
       linkEle.className = className;
     }
 
-    linkEle.style = this.style.cssText;
     linkEle.to = to;
-    linkEle.href = Router.getPathQuery() + to;
+    linkEle.href = isRelative ? Router.getPathQuery() + to : to;
     linkEle.renderTarget = renderTargetId;
     linkEle.strictActive = isStrictActive;
     linkEle.replace = replace;
