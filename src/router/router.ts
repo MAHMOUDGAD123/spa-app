@@ -1,5 +1,5 @@
 import PATH from "@/utils/path";
-import { waitFor } from "@/utils/tools";
+// import { waitFor } from "@/utils/tools";
 
 export default class Router {
   private static __instance: Router | null = null;
@@ -362,7 +362,7 @@ export default class Router {
     }
 
     // fake loading
-    await waitFor(((Math.random() * 5 + 1) >>> 0) * 1000);
+    // await waitFor(((Math.random() * 5 + 1) >>> 0) * 1000);
 
     const data = await fetch(url).then((res) => res.json());
 
