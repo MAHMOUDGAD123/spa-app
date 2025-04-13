@@ -63,6 +63,8 @@
         & > img {
           border-radius: inherit;
           max-width: 100%;
+          aspect-ratio: 16/9;
+          width: 100%;
         }
 
         &:hover {

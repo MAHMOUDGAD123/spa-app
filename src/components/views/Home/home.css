@@ -10,7 +10,7 @@
     margin-block: 30px;
     width: 90%;
     max-width: 350px;
-    transition: filter 500ms;
+    transition: filter 500ms, color var(--transition-duration-global);
 
     &:hover {
       color: var(--color-primary);
@@ -33,6 +33,7 @@
   & > .github-link {
     font-size: 2rem;
     margin-block-end: 50px;
+    transition: color var(--transition-duration-global);
 
     &:hover {
       color: var(--color-primary);
