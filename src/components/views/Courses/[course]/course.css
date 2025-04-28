@@ -118,16 +118,15 @@
         light-dark(#e5e5e5, #2f2f2f)
       );
       transition: background-color var(--transition-duration-global);
-      margin-bottom: 10px;
       user-select: none;
 
       &:has(input:checked) {
         background-color: var(--color-primary);
         background-image: none;
-        margin-bottom: 0;
 
         & + .menu {
-          display: flex;
+          height: auto;
+          visibility: visible;
         }
       }
 
@@ -166,17 +165,17 @@
     }
 
     & > .menu {
-      display: flex;
       flex-direction: column;
       padding-inline: 15px;
       font-weight: bold;
-      margin-bottom: var(--gap);
+      margin-bottom: 10px;
       overflow: hidden;
-      display: none;
-
-      @supports (interpolate-size: allow-keywords) {
-        animation: full-height 1s forwards;
-      }
+      display: flex;
+      height: 0;
+      visibility: hidden;
+      transition-property: height, visibility;
+      transition-duration: 500ms;
+      transition-behavior: allow-discrete;
 
       & > .menu-item {
         display: flex;

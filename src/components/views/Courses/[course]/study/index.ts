@@ -196,10 +196,10 @@ export default class extends AbstractView {
       const duration = 1500; // Total animation time (in ms)
       const targetProgress = courseData.progress;
 
-      const step = (timestamp: number) => {
-        const elapsed = timestamp - start;
+      const step: FrameRequestCallback = (now) => {
+        const delta = now - start;
         const progress = Math.min(
-          (elapsed / duration) * targetProgress,
+          (delta / duration) * targetProgress,
           targetProgress
         ); // Calculate smooth progress
 

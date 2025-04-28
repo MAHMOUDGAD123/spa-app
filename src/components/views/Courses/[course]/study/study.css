@@ -518,7 +518,8 @@
                 background-image: none;
 
                 & + .menu {
-                  display: flex;
+                  height: auto;
+                  visibility: visible;
                 }
               }
 
@@ -567,14 +568,14 @@
               display: flex;
               flex-direction: column;
               overflow: hidden;
+              transition-property: height, visibility;
+              transition-duration: var(--transition-duration-global);
+              height: 0;
+              visibility: hidden;
 
-              @supports (interpolate-size: allow-keywords) {
-                animation: full-height 1s forwards;
-              }
-
-              @media (max-width: 750px) {
-                display: none;
-                padding-inline: 0;
+              @media (width > 750px) {
+                visibility: visible;
+                height: auto;
               }
 
               & > .menu-item {
