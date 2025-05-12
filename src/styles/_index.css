@@ -476,3 +476,62 @@ a {
   }
 }
 /* Animaiton Keyframes End */
+
+/* View Transition */
+#__main__ {
+  view-transition-name: main;
+}
+
+#__popup__ {
+  view-transition-name: popup;
+}
+
+header {
+  view-transition-name: header;
+}
+
+/* Create a custom animation */
+@keyframes move-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes move-in {
+  from {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+::view-transition-group(main) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+::view-transition-old(main) {
+  animation-name: move-out;
+}
+
+::view-transition-new(main) {
+  animation-name: move-in;
+}
+
+::view-transition-old(main) {
+  animation-name: move-out;
+}
+
+::view-transition-new(main) {
+  animation-name: move-in;
+}

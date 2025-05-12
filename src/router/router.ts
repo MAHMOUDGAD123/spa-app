@@ -41,7 +41,11 @@ export default class Router {
     const matchedDummyRoute = Router.matchPath(fixedPath);
     Router.setSearchParams(location.search);
     Router.historyReplace(fixedPath, null); // to set the initial history state to avoid (null)
-    Router.updateCurrent(fixedPath, null, matchedDummyRoute);
+    Router.updateCurrent({
+      path: fixedPath,
+      renderTargetId: null,
+      dummyRoute: matchedDummyRoute,
+    });
     Router.clearDummyCacheInterval();
     Router.__instance = this; // set the singleton instance
     if (import.meta.env.DEV) {
@@ -75,15 +79,32 @@ export default class Router {
     Router._urlSearchParams = new URLSearchParams(searchParams);
   };
 
-  private static updateCurrent = (
-    path: string,
-    renderTargetId: string | null,
-    dummyRoute?: Router.DummyRoute
-  ) => {
+  private static updateCurrent = ({
+    path,
+    renderTargetId,
+    dummyRoute,
+    viewTransition,
+  }: {
+    path: string;
+    renderTargetId: string | null;
+    dummyRoute?: Router.DummyRoute;
+    viewTransition?: ViewTransition;
+  }) => {
     Router._current = dummyRoute ?? this.dummyNotFoundRoute(path);
     Router._currentPath = path;
     Router.preRender();
+
+    // skip view transition if the last route is popup
+    if (viewTransition && Router._currentView?.isPopupView) {
+      viewTransition.skipTransition();
+    }
+
+    // skip view transition if the new route is popup too
     Router._currentView = new Router.current.view();
+
+    if (viewTransition && Router._currentView.isPopupView) {
+      viewTransition.skipTransition();
+    }
     Router._currentView.render({ renderTargetId });
   };
 
@@ -243,7 +264,22 @@ export default class Router {
       const matchedDummyRoute = Router.matchPath(pathname);
       Router.setSearchParams(url.searchParams);
       Router.updateHistory(pathname, replace, renderTargetId);
-      Router.updateCurrent(pathname, renderTargetId, matchedDummyRoute);
+
+      if (!document.startViewTransition || Router.isTheSamePath(fullPath)) {
+        Router.updateCurrent({
+          path: pathname,
+          renderTargetId,
+          dummyRoute: matchedDummyRoute,
+        });
+      } else {
+        document.startViewTransition(() => {
+          Router.updateCurrent({
+            path: pathname,
+            renderTargetId,
+            dummyRoute: matchedDummyRoute,
+          });
+        });
+      }
 
       if (import.meta.env.DEV) {
         Router.logger(url.search);
@@ -268,7 +304,23 @@ export default class Router {
         const renderTargetId = linkEle.renderTarget;
         Router.setSearchParams(url.searchParams);
         Router.updateHistory(url.pathname, linkEle.replace, renderTargetId);
-        Router.updateCurrent(url.pathname, renderTargetId, matchedDummyRoute);
+
+        if (!document.startViewTransition) {
+          Router.updateCurrent({
+            path: url.pathname,
+            renderTargetId,
+            dummyRoute: matchedDummyRoute,
+          });
+        } else {
+          const viewTransition = document.startViewTransition(() => {
+            Router.updateCurrent({
+              path: url.pathname,
+              renderTargetId,
+              dummyRoute: matchedDummyRoute,
+              viewTransition,
+            });
+          });
+        }
 
         if (import.meta.env.DEV) {
           Router.logger();
@@ -281,7 +333,23 @@ export default class Router {
     const { path, renderTargetId } = Router.historyState;
     const matchedDummyRoute = Router.matchPath(path);
     Router.setSearchParams(location.search);
-    Router.updateCurrent(path, renderTargetId, matchedDummyRoute);
+
+    if (!document.startViewTransition) {
+      Router.updateCurrent({
+        path,
+        renderTargetId,
+        dummyRoute: matchedDummyRoute,
+      });
+    } else {
+      const viewTransition = document.startViewTransition(() => {
+        Router.updateCurrent({
+          path,
+          renderTargetId,
+          dummyRoute: matchedDummyRoute,
+          viewTransition,
+        });
+      });
+    }
 
     if (import.meta.env.DEV) {
       Router.logger();
@@ -299,6 +367,10 @@ export default class Router {
   public static isTheSamePathQuery(pathQuery: string) {
     const locPathQuery = location.pathname + location.search;
     return pathQuery === locPathQuery;
+  }
+
+  public static isTheSamePath(path: string) {
+    return path === location.pathname;
   }
 
   public static get historyState() {
