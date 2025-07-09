@@ -149,17 +149,7 @@ export default class extends DummyView {
   }
 
   async afterStaticHTMLRender(): Promise<void> {
-    // set the active filter button after render
-    for (const [id, { name, speciality }] of this.filterMap) {
-      const ele = document.getElementById(id) as HTMLInputElement;
-
-      if (this.searchParams.get("speciality") === speciality) {
-        ele.checked = true;
-        document.getElementById("_title")!.textContent = name;
-      } else {
-        ele.checked = false;
-      }
-    }
+    this.setActiveFilter();
 
     // filter click event to update the DOM on any filter click
     const filterElement = document.getElementById("coursesFilter")!;
@@ -189,5 +179,24 @@ export default class extends DummyView {
           : "Courses";
       }
     };
+  }
+
+  async afterDynamicHTMLRender(): Promise<void> {
+    this.setActiveFilter();
+  }
+
+  // privates
+  private async setActiveFilter(): Promise<void> {
+    // set the active filter button after render
+    for (const [id, { name, speciality }] of this.filterMap) {
+      const ele = document.getElementById(id) as HTMLInputElement;
+
+      if (this.searchParams.get("speciality") === speciality) {
+        ele.checked = true;
+        document.getElementById("_title")!.textContent = name;
+      } else {
+        ele.checked = false;
+      }
+    }
   }
 }
